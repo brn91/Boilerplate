@@ -1,40 +1,54 @@
-<!doctype html>
+<!doctype HTML>
+
 <html>
-  <head>
-  	<link rel="stylesheet" href="./design/index.css">
-  	<link rel="stylesheet" media="print" href="./design/print.css">
-    <link href="index.css" type="text/css" rel="stylesheet">
-    <meta charset="utf-8">
-    <title>Command and Control</title>
-  </head>
-  <body>
-  	<header>
-    	<h2>Command and Control</h2>
-    </header>
-    
-    <aside>
-    	<menu>
-    		<li><a> href="#status">Status</a></li>
-    		<li><a> href="#tasks">Tasks</a></li>
-    	</menu>
-    </aside>
-    
-    <main>
-    	<section id="status">
-    		<table id="status-overview">
-    		<thread>
-    			<tr>
-    				<th>Workload</th>
-    				<th>IP</th>
-    				<th>Task</th>
-    				<th>Status</th>
-    			</tr>
-    		</thread>
-    		<tbody>
-    			<tr>
-    				<td colspan="4">No BOTS active yet :(</td>
-    			</tr>
-    		</tbody>
-    			
-  </body>
+<head>
+
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" type="text/css" href="./Styles/interface.css">
+  <script src="./Scripts/sorttable.js"></script>
+  <script src="./Scripts/interface.js"></script>
+</head>
+<body>
+  <header><h1 class="headertext">Interface</h1></header>
+
+  <aside id="Sidebar">
+    <menu id="Sidemenu">
+      <li><p><a class="sideButton" href="#Status">Status</a></p></li>
+			<li><p><a class="sideButton" href="#Tasks">Tasks</a></p></li>
+    </menu>
+  </aside>
+  
+  <div id="Content">
+    <section class="contentTransition" id="Status">
+      <table class="sortable" id="Statustable"> 
+        <thead>
+          <tr>
+            <th>Workload</th>
+            <th>IP</th>
+            <th>Auftrag (ID)</th>
+            <th>Aktiv/Inaktiv</th>
+          </tr>
+        </thead>
+        <tbody id="statusBody">
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="contentTransition" id="Tasks">
+      <form id="taskFormular" method="POST" name="tasksForm">
+        ID: <input type="text" name="id">
+        Type: <select name = "type">
+              <option value="hash-md5">hash-md5</option>
+              <option value="hash-sha256">hash-sha256</option>
+              <option value="crack-md5">crack-md5</option>
+              </select>
+        Data: <input type="text" name="data">
+        <input id="newTaskButton" type="submit" value="Submit Task" onclick="submitTaskForm(this.form)"> 
+      </form>
+    </section>
+  </div>
+
+</body>
 </html>

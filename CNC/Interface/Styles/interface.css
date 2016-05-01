@@ -1,0 +1,132 @@
+html {
+height: 100%; 
+background: yellow; 
+background: linear-gradient(orange, red); 
+background-attachment: fixed;
+} 
+
+body {
+margin: 0px 0px 0px 0px;
+}
+
+header {
+color: black; 
+min-width: 300px; 
+margin: 0% 20% 0% 20%; 
+min-height: 50px;
+overflow-y: auto; 
+border-radius: 0px 0px 50px 50px; 
+background-color: rgba(0,0,0,0.3); 
+}
+
+.headertext { 
+text-align: center;
+}
+
+#Sidebar { 
+color: black; 
+width: 15%; 
+margin: 5% 0% 5% 0%; 
+padding: 50px 0px 50px 0px;
+border-radius: 0px 50px 50px 0px; 
+background-color: rgba(0,0,0,0.3); 
+float: left; 
+position: fixed; 
+}
+                                                                  
+#Sidemenu { 
+list-style-type: none; 
+padding-left: 10%; 
+padding-right: 10%; 
+}
+
+.sideButton {
+display: block; 
+text-align: center; 
+border-style: solid; 
+border-color: black; 
+padding: 5px 5px 5px 5px; 
+transition-property: background-color, color;
+transition-duration: 1000ms; 
+transition-timing-function: ease-out;
+}
+
+.sideButton:hover { 
+background-color: grey; 
+}
+
+.sideButton:active { 
+background-color: white; 
+} 
+
+#Content {  } 
+  
+.contenttext { 
+text-align: right; 
+}  
+
+.contentTransition {
+width: 80%; 
+color: rgba(0,0,0,0.0); 
+background-color: rgba(0,0,0,0.0); 
+margin-top: -200%; 
+border-radius: 50px 0px 0px 50px; 
+padding: 50px 0px 50px 0px; 
+position: absolute; 
+right: 0;
+transition: all 1000ms ease-in-out;
+}
+
+.contentTransition:target { 
+color: rgba(0,0,0,1); 
+background-color: rgba(0,0,0,0.3); 
+margin: 5% 0% 5% 0%;
+}
+
+#Status { }
+
+#Statustable {
+position: absolute; 
+text-align: center; 
+width: 90%; 
+margin-left: 5%; 
+margin-right: 5%;
+padding: 5px; 
+color: black; 
+font-weight: bold; 
+cursor: default; 
+border-collapse: collapse; 
+}
+
+th { 
+border: solid; 
+width: 25%; 
+background-color: rgba(255,255,255,0.3); 
+}
+
+tr { 
+transition: background-color 200ms ease-in-out; 
+}
+
+tr:hover { 
+background-color: rgba(255,255,255,0.5); 
+}
+
+.Statusbutton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-align: center;
+}
+
+#Tasks { }
+
+#taskFormular {
+  margin-left: 10%;
+}
+
+#newTaskButton { 
+background-color: #4CAF50; /* Green */
+color: white;
+text-align: center;
+}
+
