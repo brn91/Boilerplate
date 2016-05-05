@@ -2,32 +2,37 @@
 
 <html>
 <head>
+  <title>-CNC Interface-</title>
 
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
-  <link rel="stylesheet" type="text/css" href="./Styles/interface.css">
-  <script src="./Scripts/sorttable.js"></script>
-  <script src="./Scripts/interface.js"></script>
+  <link rel="stylesheet" type="text/css" href="./Style/interface.css">
+  <script src="./Script/sorttable.js"></script>
+  <script src="./Script/interface.js"></script>
 </head>
 <body>
-  <header><h1 class="headertext">Interface</h1></header>
+  <header><h1>CNC Interface</h1></header>
 
   <aside id="Sidebar">
     <menu id="Sidemenu">
       <li><p><a class="sideButton" href="#Status">Status</a></p></li>
 			<li><p><a class="sideButton" href="#Tasks">Tasks</a></p></li>
+      <li><p><a class="sideButton" href="#Bots">Bots</a></p></li>
     </menu>
   </aside>
   
-  <div id="Content">
+  <main>
     <section class="contentTransition" id="Status">
-      <table class="sortable" id="Statustable"> 
+      <h2>Status</h2>
+      <table class="sortable" id="statusTable"> 
         <thead>
           <tr>
-            <th>Workload</th>
+            <th>ID</th>
             <th>IP</th>
-            <th>Auftrag (ID)</th>
-            <th>Aktiv/Inaktiv</th>
+            <th>Task</th>
+            <th>Workload</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody id="statusBody">
@@ -36,19 +41,39 @@
         </tbody>
       </table>
     </section>
+    
     <section class="contentTransition" id="Tasks">
+      <h2>Tasks</h2>
+      <input class="tableButtonGreen" id="taskRefresh" type="submit" value="Refresh" onclick="getTasks()">
       <form id="taskFormular" method="POST" name="tasksForm">
-        ID: <input type="text" name="id">
         Type: <select name = "type">
               <option value="hash-md5">hash-md5</option>
               <option value="hash-sha256">hash-sha256</option>
               <option value="crack-md5">crack-md5</option>
               </select>
-        Data: <input type="text" name="data">
-        <input id="newTaskButton" type="submit" value="Submit Task" onclick="submitTaskForm(this.form)"> 
+        Input: <input type="text" name="data">
+        <input class="tableButtonGreen" type="submit" value="Submit Task" onclick="submitTaskForm(this.form)"> 
       </form>
+      
+      <table class="sortable" id="tasksTable"> 
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Input</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody id="tasksBody">
+          <tr>
+          </tr>
+        </tbody>
     </section>
-  </div>
+    
+    <section class="contentTransition" id="Bots">
+      <h2>Bots</h2>
+    </section>
+  </main>
 
 </body>
 </html>
