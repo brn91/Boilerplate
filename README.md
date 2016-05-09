@@ -21,7 +21,7 @@ gestellt haben.
 Alle Gruppen, die dies nicht erfuellt haben, werden nicht zum Testat
 zugelassen. Es gibt keine Ausnahmen.
 
-## Testat am 04.05.2016
+## Testat am 11.05.2016
 
 Geprueft und abgenommen werden Meilenstein 1 und 2.
 
@@ -50,38 +50,36 @@ bei Antreten des ersten Meilensteins.
 
 - Verstaendnis von Git, GitHub, Branches, Triangularer Workflow
 - Pull-Request auf dieses Projekt mit Teamname im Issue und alle Mitglieder haben schon einmal commited.
-- Interface: Status Tabelle Bots (Workload, IP, Auftrag, Pause/Resume/Stop Buttons)
+- Interface: Status Tabelle Bots (ID, IP, Auftrag, Workload, Aktion)
 - Interface: Sidebar-Menu (Status, Auftrag, Bots)
 - Interface: GET integration zu CNC Server (/api/Status)
 
-## Meilenstein 2
+## Meilenstein 2 (Beginn 20.04.2016)
 
-- Interface: Detailansicht Auftrag (Bearbeiten, Loeschen)
-- Interface: Auftrag Formular
-- Interface: POST integration zu CNC Server (/api/Task)
+- Interface: Uebersicht Status Toggle Button (Start/Stop) in Spalte Aktion
+- Interface: Uebersicht Tasks (Loeschen)
+- Interface: Formular Tasks (Hinzufuegen)
+- Interface: POST integration zu CNC Server (/api/Tasks)
 
 ## Meilenstein 3
 
-- node.js CNC: Implementierung mit ES6 und [KOA.js](https://github.com/koajs/koa)
-- GET API fuer /api/Status (Interface &lt;= CNC, Status von Bots)
-- POST API fuer /api/Status (BOT =&gt; CNC, Registrierung von Bots)
-- GET API fuer /api/Task (Bot &lt;= CNC, Abnahme von Arbeit)
-- POST API fuer /api/Task (Interface =&gt; CNC, Erstellen von Arbeit)
-- DELETE API fuer /api/Task (Interface =&gt; CNC, Loeschen von Arbeit)
-- GET API fuer /api/Report (Interface &lt;= CNC, Abnahme von Report)
-- POST API fuer /api/Report (BOT =&gt; CNC, Erstellen von Report)
-- Verwaltung der momentanen Status, Tasks und Reports in Filesystem-Cache Dateien
+
+- CNC: Implementierung mit [Babel](https://babeljs.io/), ES7 und [KOA.js](https://github.com/koajs/koa)
+- CNC: GET API fuer /api/Status (Interface &lt;= CNC, Status von Bots)
+- CNC: POST API fuer /api/Status (BOT =&gt; CNC, Registrierung von Bots)
+- CNC: GET API fuer /api/Tasks (Bot &lt;= CNC, Abnahme von Arbeit)
+- CNC: POST API fuer /api/Tasks (Interface =&gt; CNC, Erstellen von Arbeit)
+- Interface: Uebersicht Tasks Loeschen Button (Remove) in Spalte Aktion
+- CNC: DELETE API fuer /api/Tasks (Interface =&gt; CNC, Loeschen von Arbeit)
 
 ## Meilenstein 4
 
-- Interface: WebSocket integration
-- CNC: WebSocket integration
-- BOT: GET / POST integration, WebSocket integration und Bearbeitung der Tasks
-
+- CNC: GET /api/Tasks/new fuer unbearbeitete Auftraege (Tasks mit `output == null`)
+- BOT: GET /api/Tasks/new
+- BOT: POST /api/Tasks/:id fuer Bearbeitung der Tasks
 
 
 # Terminologie
-
 
 ## CNC Interface (kurz: Interface)
 
@@ -118,15 +116,6 @@ Hashes sein.
 In der Projektabnahme (Testate) werden diese Bots mit dem letzten
 Verfuegbaren Stable Release von [node.js](https://nodejs.org)
 bestueckt sein.
-
-
-
-# Spezifikationen
-
-## Meilenstein 1
-
-Up to come ...
-
 
 # Organisation
 
