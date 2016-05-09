@@ -85,13 +85,13 @@ color: rgba(0,0,0,1);
 
 /*----- Tables -----*/
 .sortable {
-width: 90%;
+max-width: 90%;
 margin: 0% 5% 0% 5%;
 padding: 5px;
 border-collapse: collapse;
 color: black;
 text-align: center;
-position: absolute;  
+position: absolute; 
 }
 
 th {
@@ -110,7 +110,10 @@ background-color: rgba(255,255,255,0.5);
 
 td {
 border: solid;
-border-width: 2px;  
+max-width: 400px;
+border-width: 2px;
+text-overflow: ellipsis;
+overflow: auto; 
 }
 
 .tableButtonGreen {
@@ -132,4 +135,3 @@ margin: 0% 0% 30px 5%;
 #taskRefresh {
 margin: 0% 0% 10px 10px;
 }
-
