@@ -3,8 +3,9 @@
  * REST API
  */
 
-// var _SERVER = 'http://botnet.artificial.engineering:8080';
+//var _SERVER = 'http://botnet.artificial.engineering:8080';
 var _SERVER = 'http://localhost:8080';
+var token = '8dfec9d920eb15363c5ec1ca071c5a93';
 
 
 
@@ -53,15 +54,13 @@ var _REST = function(options, callback) {
 		xhr.open(method, _SERVER + path);
 		xhr.responseType = 'json';
 		xhr.setRequestHeader('Content-Type', 'application/json');
+    	xhr.setRequestHeader('Token', token);
 
-
-		if (options.headers instanceof Object) {
-
+		/*if (options.headers instanceof Object) {
 			for (var key in settings.headers) {
 				xhr.setRequestHeader(key, settings.headers[key]);
 			}
-
-		}
+		}*/
 
 		xhr.onload = function() {
 			callback(xhr.response);

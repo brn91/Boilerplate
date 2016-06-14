@@ -1,0 +1,1 @@
+[{"id":0,"type":"hash-md5","data":{"input":"test1","output":null}},{"id":1,"type":"hash-sha256","data":{"input":"test2","output":null}},{"id":2,"type":"crack-md5","data":{"input":"test3","output":null}}]

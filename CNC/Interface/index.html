@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CNC Interface</title>
+	<link rel="stylesheet" href="./design/index.css">
+	<link rel="stylesheet" media="print" href="./design/print.css">
+</head>
+<body>
+
+	<header>
+		<h1>CNC Interface</h1>
+	</header>
+
+	<aside>
+		<menu>
+			<li><a href="#status"><span class="icon-status"></span>Status</a></li>
+			<li><a href="#tasks"><span class="icon-tasks"></span>Tasks</a></li>
+			<li><a href="#reports"><span class="icon-reports"></span>Reports</a></li>
+			<li><a href="#admin"><span class="icon-admin"></span>Admin</a></li>
+		</menu>
+	</aside>
+
+	<main>
+		<section id="status">
+			<div class="table-wrapper">
+			<table id="status-overview">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>IP</th>
+						<th>Task</th>
+						<th>Workload</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="5">Press Refresh to load Bot Status Overview.</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div class="action-bar">
+				<button><span class="icon-refresh"></span></button>
+			</div>
+		</section>
+		<section id="tasks">
+			<div class="table-wrapper">
+			<table id="tasks-overview">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Type</th>
+						<th>Input</th>
+						<th>Output</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="5">Press Refresh to load Tasks Overview.</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div class="action-form">
+				<p>
+					<select name="type">
+						<option value="hash-md5" selected>hash-md5</option>
+						<option value="hash-sha256">hash-sha256</option>
+						<option value="crack-md5">crack-md5</option>
+					</select>
+					<input name="input" type="text" placeholder="input data">
+					<button><span class="icon-okay"></span></button>
+				</p>
+			</div>
+			<div class="action-bar">
+				<button><span class="icon-refresh"></span></button>
+			</div>
+		</section>
+	</main>
+
+	<script src="./source/index.js"></script>
+</body>
+</html>
